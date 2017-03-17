@@ -1,0 +1,34 @@
+<module>
+    <name>tutorial_yarp-multithreading</name>
+
+    <doxygen-group>tutotials VVV</doxygen-group>
+    <description>tutotial Multithreading</description>
+    <copypolicy>Released under the terms of the GNU GPL v2.0</copypolicy>
+    <version>1.0</version>
+
+    <description-long>
+    This module implements a simple multithread image producer
+    </description-long>
+
+    <authors>
+        <author email="ali.paikan@iit.it"> Ali Paikan </author>
+    </authors>
+
+    <arguments>
+        <param default="1" required="no" desc="number of threads (>=1)"> threads </param>
+        <param default="320" required="no" desc="image width"> width </param>
+        <param default="240" required="no" desc="image height"> height </param>
+        <param default="30" required="no" desc="image frame rate"> framerate </param>
+    </arguments>
+
+    <!-- <data> can have multiple <input> or <output> tags. -->
+    <data>
+        <!-- output datas if available -->
+        <output port_type="stream">
+            <type>ImageOf&lt;PixelRgb&gt;</type>
+            <port carrier="udp">/PainterModule/img:o</port>
+            <description>streams a painted image</description>
+        </output>
+    </data>
+
+</module>

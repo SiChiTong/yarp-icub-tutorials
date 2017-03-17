@@ -1,0 +1,61 @@
+# path to the network definition
+net: "train_val.prototxt"
+#
+# CPU or GPU mode
+solver_mode: CPU
+#
+#### n_train=1280
+#### batch_size_train=32
+#### iters_per_epoch_train=1280/32=40
+#### max_epoch=36
+#
+# carry out <max_iter> training iterations
+max_iter: 1440
+#
+#### n_val=320
+#### batch_size_val=32
+#### iters_per_epoch_val=320/32=10
+#### test_epoch=1
+#
+# the validation will carry out <test_iter> iterations
+test_iter: 10
+#
+# carry out validation every <test_interval> training iterations
+test_interval: 40
+#
+# display every <display> iterations
+display: 40
+#
+# save model every <snapshot> iterations
+snapshot: 0
+snapshot_prefix: "icw"
+#
+# solver type
+solver_type: SGD
+momentum: 0.9
+#
+# L2 regularization
+weight_decay: 0.0005
+#
+# learning rate decay policy
+base_lr: 0.01
+lr_policy: "poly"
+power: 0.5
+
+# the currently implemented learning rate
+# policies are as follows:
+#
+#    - fixed: always return base_lr.
+#    - step: return base_lr * gamma ^ (floor(iter / stepsize))
+#    - exp: return base_lr * gamma ^ iter
+#    - inv: return base_lr * (1 + gamma * iter) ^ (- power)
+#    - multistep: similar to step but it allows non uniform steps defined by
+#      stepvalue
+#    - poly: the effective learning rate follows a polynomial decay, to be
+#      zero by the max_iter. return base_lr (1 - iter/max_iter) ^ (power)
+#    - sigmoid: the effective learning rate follows a sigmod decay
+#      return base_lr ( 1/(1 + exp(-gamma * (iter - stepsize))))
+#
+# where base_lr, max_iter, gamma, stepsize, stepvalue and power are defined
+# in the solver parameter protocol buffer, and iter is the current iteration.
+  

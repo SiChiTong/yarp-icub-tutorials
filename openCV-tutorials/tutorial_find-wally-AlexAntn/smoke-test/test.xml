@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suit name="Test Tutorial Finding Wally">
+    <description>Testing the tutorial on Finding Wally </description>
+    <fixture param="--fixture fixture.xml"> yarpmanager </fixture>
+
+    <test type="dll"> TestTutorialFindingWally </test>
+</suit>

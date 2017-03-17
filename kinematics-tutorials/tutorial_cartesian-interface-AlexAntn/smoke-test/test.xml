@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suit name="Test Tutorial Cartesian Interface">
+    <description>Testing the tutorial on the Cartesian Interface</description>
+    <environment>--robotname icubSim</environment>
+    <fixture param="--fixture fixture.xml"> yarpmanager </fixture>
+
+    <test type="dll"> TestTutorialCartesianInterface </test>
+</suit>

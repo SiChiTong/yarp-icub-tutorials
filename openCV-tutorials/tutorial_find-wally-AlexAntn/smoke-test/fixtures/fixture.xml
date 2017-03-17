@@ -1,0 +1,22 @@
+<application>
+    <name>Fixture for Tutorial on robot vision finding wally</name>
+    <description>A fixture to prepare components required for the tutorial</description>
+    <version>1.0</version>
+    <authors>
+        <author email="vadim.tikhanoff@iit.it">Vadim Tikhanoff</author>
+    </authors>
+    <module>
+        <name>find-wally</name>
+        <node>testnode</node>
+    </module>
+    <module>
+        <name>yarpview</name>
+        <node>testnode</node>
+        <parameters>--name /output --x 0 --y 0 --RefreshTime 33 </parameters>
+    </module>
+    <connection>
+        <from>/find-wally/image:o</from>
+        <to>/output</to>
+        <protocol>tcp</protocol>
+    </connection>
+</application>

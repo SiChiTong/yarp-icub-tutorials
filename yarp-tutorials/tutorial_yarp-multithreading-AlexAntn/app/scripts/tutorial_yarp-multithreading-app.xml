@@ -1,0 +1,31 @@
+<application>
+
+  <name>Tutorial_yarp-multithreading</name>
+  <description> Tutorial on yarp Multithreading</description>
+
+  <dependencies>
+      <port>/yarplogger</port>
+  </dependencies>
+
+  <module>
+      <name>tutorial_yarp-multithreading</name>
+      <parameters>--threads 1 --width 320 --height 240</parameters>
+      <environment>YARP_FORWARD_LOG_ENABLE=1</environment>
+      <node>localhost</node>
+  </module>
+
+  <module>
+      <name>yarpview</name>
+      <parameters>--synch</parameters>
+      <prefix>/paint</prefix>
+      <node>localhost</node>
+  </module>
+
+  <connection>
+      <from>/PainterModule/img:o</from>
+      <to>/paint/yarpview/img:i</to>
+      <protocol>udp</protocol>
+  </connection>
+
+</application>
+

@@ -1,0 +1,16 @@
+<application>
+    <name>Fixture for assignment_Codec</name>
+    <description>A fixture to prepare components required for the assignment</description>
+    <version>1.0</version>
+    <authors>
+        <author email="ali.paikan@iit.it">Ali Paikan</author>
+    </authors>
+
+    <module>
+      <name>assignment_Codec</name>
+      <parameters>--mode coder</parameters>
+      <prefix>/coder</prefix>
+      <node>testnode</node>
+    </module>
+
+</application>

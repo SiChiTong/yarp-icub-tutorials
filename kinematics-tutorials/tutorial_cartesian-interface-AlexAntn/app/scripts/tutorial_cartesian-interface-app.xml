@@ -1,0 +1,16 @@
+<application>
+
+  <name>Tutorial on Cartesian Interface App</name>
+
+  <dependencies>
+      <port>/yarplogger</port>
+      <port>/icubSim/cartesianController/left_arm/state:o</port>
+  </dependencies>
+
+  <module>
+      <name>tutorial_cartesian-interface</name>
+      <environment>YARP_FORWARD_LOG_ENABLE=1</environment>
+      <node>localhost</node>
+  </module>
+
+</application>

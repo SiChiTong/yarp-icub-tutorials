@@ -1,0 +1,15 @@
+<application>
+    <name>Fixture for Assignment on Event Spiking Model</name>
+    <description>A fixture to prepare components required for the assignment</description>
+    <version>1.0</version>
+    <authors>
+        <author email="arren.glover@iit.it">Arren Glover</author>
+    </authors>
+
+    <module>
+        <name>assignment_event-spiking-model</name>
+        <parameters>--name /vSpikingModel </parameters>
+        <node>localhost</node>
+    </module>
+
+</application>

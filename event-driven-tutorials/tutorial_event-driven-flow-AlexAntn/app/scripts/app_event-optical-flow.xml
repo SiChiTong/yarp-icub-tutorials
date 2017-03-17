@@ -1,0 +1,73 @@
+<application>
+<name> event-optical-flow </name>
+
+<dependencies>
+</dependencies>
+
+<!--
+<module>
+    <name>yarpdataplayer</name>
+    <node>localhost</node>
+</module>
+-->
+<module>
+<name>vFramer</name>
+<parameters>--name vFramerSensor --frameRate 60 --displays "(1 evtSens (AE ISO))" --height 240 --width 304</parameters>
+<node>localhost</node>
+</module>
+
+<module>
+    <name>yarpview</name>
+    <parameters>--name /evtSens --x 000 --y 000 --RefreshTime 16 </parameters>
+    <node>localhost</node>
+</module>
+
+<module>
+    <name>tutorial_event-driven-flow</name>
+    <parameters>--name /vOptFlow --strict --filterSize 3 --minEvtsThresh 6 </parameters>
+    <node>localhost</node>
+</module>
+
+<module>
+    <name>vFramer</name>
+    <parameters>--name vFramerOptFlow --frameRate 60 --displays "(1 evtFlow (AE FLOW))" --height 240 --width 304</parameters>
+    <node>localhost</node>
+</module>
+
+<module>
+    <name>yarpview</name>
+    <parameters>--name /evtFlow --x 500 --y 500 --RefreshTime 16 </parameters>
+    <node>localhost</node>
+</module>
+
+<connection>
+<from>/zynqGrabber/vBottle:o</from>
+<to>/vFramerSensor/vBottle:i</to>
+<protocol>udp</protocol>
+</connection>
+
+<connection>
+    <from>/zynqGrabber/vBottle:o</from>
+    <to>/vOptFlow/vBottle:i</to>
+    <protocol>udp</protocol>
+</connection>
+
+<connection>
+    <from>/vOptFlow/vBottle:o</from>
+    <to>/vFramerOptFlow/vBottle:i</to>
+    <protocol>tcp</protocol>
+</connection>
+
+<connection>
+    <from>/vFramerSensor/evtSens</from>
+    <to>/evtSens</to>
+    <protocol>tcp</protocol>
+</connection>
+
+<connection>
+    <from>/vFramerOptFlow/evtFlow</from>
+    <to>/evtFlow</to>
+    <protocol>tcp</protocol>
+</connection>
+
+</application>

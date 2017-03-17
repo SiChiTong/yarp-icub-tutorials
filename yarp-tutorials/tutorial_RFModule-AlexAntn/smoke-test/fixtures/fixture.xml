@@ -1,0 +1,33 @@
+<application>
+    <name>Fixture for tutorial_RFModule</name>
+    <description>A fixture to prepare components required for the tutorial</description>
+    <version>1.0</version>
+    <authors>
+        <author email="ali.paikan@iit.it">Ali Paikan</author>
+    </authors>
+
+    <module>
+      <name>tutorial_RFModule</name>
+      <parameters>--mode coder</parameters>
+      <prefix>/coder</prefix>
+      <node>testnode</node>
+    </module>
+
+    <module>
+      <name>tutorial_RFModule</name>
+      <parameters>--mode decoder</parameters>
+      <prefix>/decoder</prefix>
+      <node>testnode</node>
+      <ensure>
+         <wait>2.0</wait>
+     </ensure>
+    </module>
+
+  <connection>
+      <from external="true">/coder/Codec/out</from>
+      <to>/decoder/Codec/in</to>
+      <protocol>tcp</protocol>
+  </connection>
+
+</application>
+

@@ -1,0 +1,10 @@
+mug1 0
+mug2 1
+mug3 2
+mug4 3
+mug5 4
+remote1 5
+remote2 6
+remote3 7
+remote4 8
+remote5 9
